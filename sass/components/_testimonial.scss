@@ -1,0 +1,64 @@
+.testimonial {
+    width: 75%;
+    margin: auto;
+    background: $color-white;
+    padding: 6rem;
+    padding-left: 8rem;
+    box-shadow: 0 3rem 6rem rgba($color-black, .1);
+    border-radius: 3px;
+    font-size: $default-font-size;
+    transform: skewX(-12deg);
+
+    &__shape {
+        background-color: lightcoral;
+        height: 15rem;
+        width: 15rem;
+        float: left;
+        
+        // ^For this to work, the element need a width and height and it should be floated.
+        -webkit-shape-outside: circle(50% at 50% 50%);
+        shape-outside: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+        
+        // ^To give spacing for floated elements, its good to give transform instead of margin or padding
+        transform: translateX(-2rem) skewX(12deg);
+        
+        img {
+            object-fit: cover;
+            height: inherit;
+            width: inherit;
+            transition: all .4s;
+            transform: scale(1.3);
+        }
+    }
+
+    &__message {
+        transform: skewX(12deg);
+    }
+
+    &__photo-caption {
+        position: absolute;
+        color: $color-white;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 20%);
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 1.7rem;
+        opacity: 0;
+        transition: all .5s;
+
+        //^ Some unknown glitch is there for slow movement of transition. This is the fix.
+        backface-visibility: hidden;
+    }
+
+    &:hover &__photo-caption {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+
+    &:hover &__shape img {
+        filter: blur(2px) brightness(75%);
+        transform: scale(1);
+    }
+}

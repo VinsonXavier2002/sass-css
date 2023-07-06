@@ -1,0 +1,23 @@
+.feature-wrapper-box {
+    text-align: center;
+    font-size: 1.5rem;
+    background-color: rgba($color-white, .8);
+    padding: 2rem;
+    border-radius: 4px;
+    transition: all .2s;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .5);
+
+    &__icon {
+        font-size: 400%;
+    color: $color-grey;
+    background-image: linear-gradient(to right, $primary-color-light, $primary-color-dark);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    }
+
+    &:hover {
+        transform: translateY(-20px) scale(1.05);
+    }
+}
