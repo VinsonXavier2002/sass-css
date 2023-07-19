@@ -13,6 +13,16 @@
         right: 6rem;
         z-index: 102;
         cursor: pointer;
+
+        @include respond(tablet-portrait) {
+            top: 4rem;
+            right: 4rem;
+        }
+
+        @include respond(phone) {
+            top: 3rem;
+            right: 3rem;
+        }
     }
 
     &__background {
@@ -25,6 +35,16 @@
         right: 6.5rem;
         z-index: 100;
         transition: all .8s cubic-bezier(0.83, 0, 0.17, 1);
+
+        @include respond(tablet-portrait) {
+            top: 4.5rem;
+            right: 4.5rem;
+        }
+
+        @include respond(phone) {
+            top: 3.5rem;
+            right: 3.5rem;
+        }
     }
 
     &__nav {
@@ -49,6 +69,7 @@
     }
 
     &__link {
+
         &:link,
         &:visited {
             display: inline-block;
@@ -66,17 +87,17 @@
         &:hover {
             background-position: 100%;
             color: $primary-color;
-            transform: translate(2rem); 
+            transform: translate(2rem);
         }
-        
+
     }
 
-    &__checkbox:checked ~ &__nav {
+    &__checkbox:checked~&__nav {
         opacity: 1;
         width: 100%;
     }
 
-    &__checkbox:checked ~ &__background {
+    &__checkbox:checked~&__background {
         transform: scale(80);
     }
 
@@ -122,7 +143,7 @@
         }
     }
 
-    &__checkbox:checked ~ &__button &__icon {
+    &__checkbox:checked~&__button &__icon {
         background-color: transparent;
 
         &::before {

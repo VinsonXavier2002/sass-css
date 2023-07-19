@@ -12,3 +12,39 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+// *MEDIA QUERY MANAGER
+
+/*
+0 - 600px: Phone,
+600 - 900px: Tablet portrait,
+900 - 1200px: Tablet landscape,
+1200 - 1800 px: Our normal styles apply, ie: Desktop,
+1800 +: Big screens
+
+breakpoint arguments:
+phone,
+tablet-portrait,
+tablet-landscape,
+big-desktop
+*/
+
+// in media queries, it is better to use em than rem, 1em = 16px by browser default.
+// order of media queries is for desktop first approach, ie. max-width, the order should be from largest to the smallest
+// in mobile first approach, ie. min-width, the order should be smallest to the largest.
+
+// media query flow order: base + typography > general layout + grid > page layout > components.
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media(max-width: 37.5em) { @content };     //600px
+    }
+    @if $breakpoint == tablet-portrait {
+        @media(max-width: 56.25em) { @content };    //900px 
+    }
+    @if $breakpoint == tablet-landscape {
+        @media(max-width: 75em) { @content };       //1200px
+    }
+    @if $breakpoint == big-desktop {
+        @media(min-width: 112.5em) { @content };        //1800px
+    }
+}

@@ -6,12 +6,19 @@
 
 .section-features {
     margin-top: -15vh;
-    height: 90vh;
     padding: 25rem 0;
     background-image: linear-gradient(to right, rgba($primary-color-light, .8), rgba($primary-color-dark, .8)), url('../../img/nat-4.jpg');
     background-size: cover;
     background-position: top;
-    clip-path: polygon(0 15vh, 100% 0, 100% 75vh, 0 100%);
+    clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
+
+    @include respond(tablet-portrait) {
+        clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    }
+
+    @include respond(phone) {
+        clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
+    }
 }
 
 .section-tours {
