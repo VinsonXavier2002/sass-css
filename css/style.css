@@ -127,7 +127,10 @@ body {
   text-transform: uppercase; }
 
 .u-margin-bottom-large {
-  margin-bottom: 8rem; }
+  margin-bottom: 8rem !important; }
+  @media (max-width: 56.25em) {
+    .u-margin-bottom-large {
+      margin-bottom: 5rem !important; } }
 
 .u-margin-bottom-medium {
   margin-bottom: 4rem; }
@@ -220,23 +223,45 @@ body {
 
 .composition {
   position: relative; }
+  .composition::after {
+    content: "";
+    display: table;
+    clear: both; }
   .composition .composition__photo {
     width: 55%;
-    border-radius: 5px;
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.4);
     position: absolute;
     transition: all .2s;
     z-index: 0;
     outline-offset: 2rem; }
+    @media (max-width: 56.25em) {
+      .composition .composition__photo {
+        width: calc(100% / 3);
+        position: relative;
+        float: left; } }
     .composition .composition__photo--p1 {
       top: -2rem;
       left: 0; }
+      @media (max-width: 56.25em) {
+        .composition .composition__photo--p1 {
+          top: 0;
+          scale: 1.1; } }
     .composition .composition__photo--p2 {
       top: 0;
       right: 0; }
+      @media (max-width: 56.25em) {
+        .composition .composition__photo--p2 {
+          top: -2rem;
+          scale: 1.2;
+          z-index: 5; } }
     .composition .composition__photo--p3 {
       top: 10rem;
       left: 20%; }
+      @media (max-width: 56.25em) {
+        .composition .composition__photo--p3 {
+          top: 1rem;
+          left: 0;
+          scale: 1.1; } }
     .composition .composition__photo:hover {
       transform: scale(1.1);
       box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.5);
@@ -347,6 +372,37 @@ body {
     font-weight: 100;
     font-size: 5rem;
     margin-bottom: 5rem; }
+  @media (max-width: 56.25em) {
+    .tour-wrapper-box {
+      height: auto;
+      box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.4);
+      background-color: #FFF; }
+      .tour-wrapper-box:hover .tour-wrapper-box__side--front {
+        transform: rotateY(0); }
+      .tour-wrapper-box__side {
+        height: auto;
+        font-size: 2rem;
+        transition: all .8s ease;
+        position: relative;
+        width: 100%;
+        box-shadow: none; }
+        .tour-wrapper-box__side--back {
+          transform: rotateY(0);
+          padding: 5rem 0;
+          clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%); }
+      .tour-wrapper-box__back-wrapper {
+        color: #FFF;
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        transform: translate(0); }
+      .tour-wrapper-box__price-only {
+        text-transform: uppercase; }
+      .tour-wrapper-box__price-value {
+        font-weight: 100;
+        font-size: 5rem;
+        margin-bottom: 5rem; } }
 
 .testimonial {
   width: 75%;
@@ -358,6 +414,12 @@ body {
   border-radius: 3px;
   font-size: 1.6rem;
   transform: skewX(-12deg); }
+  @media (max-width: 56.25em) {
+    .testimonial {
+      width: 100%; } }
+  @media (max-width: 37.5em) {
+    .testimonial {
+      transform: skewX(0); } }
   .testimonial__shape {
     background-color: lightcoral;
     height: 15rem;
@@ -367,6 +429,9 @@ body {
     shape-outside: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
     transform: translateX(-2rem) skewX(12deg); }
+    @media (max-width: 37.5em) {
+      .testimonial__shape {
+        transform: translateX(-2rem) skewX(0); } }
     .testimonial__shape img {
       object-fit: cover;
       height: inherit;
@@ -375,6 +440,9 @@ body {
       transform: scale(1.3); }
   .testimonial__message {
     transform: skewX(12deg); }
+    @media (max-width: 37.5em) {
+      .testimonial__message {
+        transform: skew(0); } }
   .testimonial__photo-caption {
     position: absolute;
     color: #FFF;
@@ -451,6 +519,10 @@ body {
 .form__radio-group {
   width: 49%;
   display: inline-block; }
+  @media (max-width: 56.25em) {
+    .form__radio-group {
+      width: 100%;
+      margin-bottom: 2rem; } }
 
 .form__radio-label {
   font-size: 1.6rem;
@@ -528,9 +600,18 @@ body {
     box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.4);
     transform: translate(-50%, -50%) scale(0.3);
     transition: all .4s; }
+    @media (max-width: 37.5em) {
+      .popup__box {
+        display: block;
+        max-height: 50rem;
+        overflow: auto;
+        width: 90%; } }
   .popup__left {
     width: 33.5%;
     display: table-cell; }
+    @media (max-width: 56.25em) {
+      .popup__left {
+        display: none; } }
   .popup__right {
     width: 66.5%;
     display: table-cell;
@@ -546,6 +627,9 @@ body {
     column-gap: 4rem;
     column-rule: 1px solid #eee;
     hyphens: auto; }
+    @media (max-width: 37.5em) {
+      .popup__text {
+        column-count: unset; } }
 
 .header {
   height: 95vh;
@@ -777,6 +861,9 @@ body {
   background-color: #f7f7f7;
   padding: 25rem 0;
   margin-top: -20vh; }
+  @media (max-width: 56.25em) {
+    .section-about {
+      padding-bottom: 20rem; } }
 
 .section-features {
   margin-top: -15vh;
@@ -794,8 +881,11 @@ body {
 
 .section-tours {
   background-color: #f7f7f7;
-  padding: 25rem 0 10rem 0;
+  padding: 20rem 0 10rem 0;
   margin-top: -15vh; }
+  @media (max-width: 56.25em) {
+    .section-tours {
+      padding-top: 15rem; } }
 
 .section-stories {
   position: relative;
@@ -807,7 +897,6 @@ body {
 
 .book {
   background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../img/nat-10.jpg);
-  height: 50rem;
   border-radius: 3px;
   background-size: cover;
   box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.3); }
@@ -815,6 +904,18 @@ body {
     content: "";
     display: table;
     clear: both; }
+  @media (max-width: 75em) {
+    .book {
+      background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 70%, transparent 30%), url(../img/nat-10.jpg); } }
+  @media (max-width: 56.25em) {
+    .book {
+      background-image: linear-gradient(0, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url(../img/nat-10.jpg); } }
   .book__form {
     width: 50%;
     padding: 6rem; }
+    @media (max-width: 75em) {
+      .book__form {
+        width: 70%; } }
+    @media (max-width: 56.25em) {
+      .book__form {
+        width: 100%; } }

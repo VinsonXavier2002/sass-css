@@ -1,7 +1,13 @@
 .u-center-text { text-align: center; }
 .u-capitalize { text-transform: uppercase; }
 
-.u-margin-bottom-large { margin-bottom: 8rem; }
+.u-margin-bottom-large {
+    margin-bottom: 8rem !important;
+
+    @include respond(tablet-portrait) {
+        margin-bottom: 5rem !important;
+    }
+}
 .u-margin-bottom-medium { margin-bottom: 4rem; }
 .u-margin-bottom-small { margin-bottom: 1.5rem; }
 

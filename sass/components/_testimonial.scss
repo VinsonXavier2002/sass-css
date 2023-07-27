@@ -9,6 +9,14 @@
     font-size: $default-font-size;
     transform: skewX(-12deg);
 
+    @include respond(tablet-portrait ) {
+        width: 100%;
+    }
+
+    @include respond(phone) {
+        transform: skewX(0);
+    }
+
     &__shape {
         background-color: lightcoral;
         height: 15rem;
@@ -22,6 +30,10 @@
         
         // ^To give spacing for floated elements, its good to give transform instead of margin or padding
         transform: translateX(-2rem) skewX(12deg);
+
+        @include respond(phone) {
+            transform: translateX(-2rem) skewX(0);
+        }
         
         img {
             object-fit: cover;
@@ -34,6 +46,10 @@
 
     &__message {
         transform: skewX(12deg);
+
+        @include respond(phone) {
+            transform: skew(0);
+        }
     }
 
     &__photo-caption {

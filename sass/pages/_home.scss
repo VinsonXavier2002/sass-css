@@ -2,6 +2,10 @@
     background-color: $color-grey-light-1;
     padding: 25rem 0;
     margin-top: -20vh;
+
+    @include respond(tablet-portrait) {
+        padding-bottom: 20rem;
+    }
 }
 
 .section-features {
@@ -23,8 +27,12 @@
 
 .section-tours {
     background-color: $color-grey-light-1;
-    padding: 25rem 0 10rem 0;
+    padding: 20rem 0 10rem 0;
     margin-top: -15vh;
+
+    @include respond(tablet-portrait) {
+        padding-top: 15rem;
+    }
 }
 
 .section-stories {
@@ -40,13 +48,28 @@
 .book {
     background-image: linear-gradient(105deg, rgba($color-white, .9) 0%, rgba($color-white, .9) 50%, transparent 50%), url(../img/nat-10.jpg);
     @include clearfix;
-    height: 50rem;
     border-radius: 3px;
     background-size: cover;
     box-shadow: 0 1.5rem 3rem rgba($color-black, .3);
 
+    @include respond(tablet-landscape) {
+        background-image: linear-gradient(105deg, rgba($color-white, .9) 0%, rgba($color-white, .9) 70%, transparent 30%), url(../img/nat-10.jpg);
+    }
+
+    @include respond(tablet-portrait) {
+        background-image: linear-gradient(0, rgba($color-white, .9) 0%, rgba($color-white, .9) 100%), url(../img/nat-10.jpg);
+    }
+
     &__form {
         width: 50%;
         padding: 6rem;
+
+        @include respond(tablet-landscape) {
+            width: 70%;
+        }
+
+        @include respond(tablet-portrait) {
+            width: 100%;
+        }
     }
 }

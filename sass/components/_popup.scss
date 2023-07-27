@@ -48,11 +48,22 @@
         box-shadow: 0 2rem 4rem rgba($color-black, .4);
         transform: translate(-50%, -50%) scale(.3);
         transition: all .4s;
+
+        @include respond(phone) {
+            display: block;
+            max-height: 50rem;
+            overflow: auto;
+            width: 90%;
+        }
     }
 
     &__left {
         width: 33.5%;
         display: table-cell;
+
+        @include respond(tablet-portrait) {
+            display: none;
+        }
     }
 
     &__right {
@@ -74,5 +85,9 @@
         column-gap: 4rem;
         column-rule: 1px solid $color-grey-light-2;
         hyphens: auto;
+
+        @include respond(phone) {
+            column-count: unset;
+        }
     }
 }
